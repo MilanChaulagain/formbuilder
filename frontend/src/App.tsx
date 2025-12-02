@@ -1,0 +1,24 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home/Home';
+import CreateForm from './pages/CreateForm/CreateForm';
+import FormRenderer from './components/FormRenderer/FormRenderer';
+import Dashboard from './components/Dashboard/Dashboard';
+import './App.css';
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<CreateForm />} />
+        <Route path="/form/:slug" element={<FormRenderer />} />
+        <Route path="/dashboard/:slug" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
