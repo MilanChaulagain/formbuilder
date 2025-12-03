@@ -9,6 +9,10 @@ const Navbar: React.FC = () => {
     return location.pathname === path ? 'active' : '';
   };
 
+  const isProductsActive = () => {
+    return location.pathname.startsWith('/products') ? 'active' : '';
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -22,6 +26,9 @@ const Navbar: React.FC = () => {
           </Link>
           <Link to="/create" className={`nav-link ${isActive('/create')}`}>
             ➕ Create Form
+          </Link>
+          <Link to="/products" className={`nav-link ${isProductsActive()}`}>
+            🛒 Products
           </Link>
         </div>
       </div>
